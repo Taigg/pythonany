@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/styles.css'%}">
+    <title>Fisrt App</title>
+</head>
+<body>
+    <h1>welcome to relative URL template</h1>
+    <ul>
+        <li><a href="{% url "index" %}">Home</a> </li>
+        <li><a href="{% url "appFour:page1" %}">page1</a> </li>
+        <li><a href="{% url "appFour:page2" %}">page2</a> </li>
+    </ul>
+    <div class="container">
+        {% block body_block %}
+        {% endblock %}
+    </div>
+</body>
+</html>

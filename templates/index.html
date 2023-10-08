@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/styles.css'%}">
+    <title>Fisrt App</title>
+</head>
+<body>
+    <h1>Hello this is templates/index.html</h1>
+    {% if access_records %}
+    
+    <table>
+        <thead>
+            <th>Site Name </th>
+            <th>Date Accessed</th>
+        </thead>
+        {% for record in access_records %}
+        <tr>
+            <td>{{ record.name }}</td>
+            <td>{{ record.date }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <p>NO ACCESS RECORDS FOUND!</p>
+    {% endif %}    
+</body>
+</html>
